@@ -1,0 +1,103 @@
+<ion-content>
+  <div class="dynamic-container">
+    <ion-loading
+      *ngIf="loading"
+      [isOpen]="loading"
+      message="Haciendo cálculo... espere un momento"
+    ></ion-loading>
+    <!-- message if input is 0 -->
+    <ion-alert
+      header="Número no válido"
+      message="Por favor, ingrese un número mayor a 0."
+      buttons="OK"
+      (didDismiss)="alert = false"
+      [isOpen]="alert"
+    ></ion-alert>
+
+    <ion-grid class="scroll">
+      <ion-row class="align-center">
+        <ion-col size="12" size-md="8">
+          <ion-input
+            label="Inserte el número"
+            label-placement="floating"
+            fill="solid"
+            type="number"
+            placeholder="Ex. 87"
+            (ionInput)="onInput($event)"
+          ></ion-input>
+        </ion-col>
+
+        <ion-col
+          size="12"
+          size-md="3"
+          class="button-col"
+          (click)="calculateMultiples()"
+        >
+          <riple-rectangle-button
+            [buttonText]="buttonLabel"
+          ></riple-rectangle-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6">
+          <ion-card class="scrollable-list">
+            <ion-card-header>
+              <ion-card-title>Resultados</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list *ngIf="arrayNumbers.length > 0 && !loading">
+                <ion-item
+                  *ngFor="let item of arrayNumbers"
+                  [style.color]="item.value"
+                >
+                  <ion-label>
+                    <h2>{{ item.number }}</h2>
+                    <p>{{ getMultiplesDescription(item.number) }}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-text *ngIf="arrayNumbers.length === 0" color="medium">
+                <p style="text-align: center">No hay números para mostrar.</p>
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <!-- data form database -->
+        <ion-col size="12" size-md="6">
+          <ion-card class="scrollable-list">
+            <ion-card-header>
+              <ion-card-title>Últimos Múltiplos Guardados</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list
+                *ngIf="arrayFromDatabase.length > 0 && !skeletonLoading"
+              >
+                <ion-item
+                  *ngFor="let item of arrayFromDatabase"
+                  [style.color]="item.color"
+                >
+                  <ion-label>
+                    <h2>{{ item.value }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+              <skeleton-loading
+                *ngIf="skeletonLoading"
+                [skeletonLoading]="skeletonLoading"
+              ></skeleton-loading>
+              <ion-text
+                *ngIf="arrayFromDatabase.length === 0 && !skeletonLoading"
+                color="medium"
+              >
+                <p style="text-align: center">No hay números para mostrar.</p>
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
