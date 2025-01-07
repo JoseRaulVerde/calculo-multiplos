@@ -1,59 +1,53 @@
-# ProyectENA
+# Cálculo de Múltiplos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Este proyecto es una aplicación interactiva desarrollada con **Ionic**, **Angular** y **Firebase**. Permite a los usuarios calcular los múltiplos de números específicos (3, 5 y 7) e interactuar con una base de datos en tiempo real.
 
-## Development server
+## Características
 
-To start a local development server, run:
+- **Cálculo de Múltiplos:** Ingrese cualquier número para identificar sus múltiplos de 3, 5 y 7.
+- **Interfaz Dinámica:** Implementación de scroll y diseño responsivo para dispositivos móviles.
+- **Visualización de Resultados:** Muestra los números procesados con colores diferenciados según sus múltiplos.
+  - Verde para múltiplos de 3.
+  - Azul para múltiplos de 5.
+  - Rojo para múltiplos de 7.
+  - Negro si no tiene múltiplos.
+- **Firebase Realtime Database:**
+  - Guarda los números y colores asociados en la base de datos en tiempo real.
+  - Visualiza los números guardados con el historial en orden inverso (lo más reciente primero).
+- **Skeleton Loader:** Visualiza un cargador animado mientras se obtienen los datos de Firebase.
+- **Diseño Responsivo:** Optimizado para dispositivos móviles y escritorio.
 
-```bash
-ng serve
-```
+## Tecnologías Utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Ionic Framework:** Para la construcción de la interfaz móvil y web.
+- **Angular:** Para la lógica de la aplicación y gestión de componentes.
+- **Firebase Realtime Database:** Como base de datos en tiempo real.
+- **TypeScript:** Para una escritura tipada del código.
+- **HTML y CSS:** Para el diseño y maquetación de la aplicación.
 
-## Code scaffolding
+## Capturas de Pantalla
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalación
 
-```bash
-ng generate component component-name
-```
+Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.g
 
-```bash
-ng generate --help
-```
+cd tu-repositorio
+Instala las dependencias:
 
-## Building
+npm install
+Configura Firebase:
 
-To build the project run:
+Crea un proyecto en Firebase.
+Configura las credenciales en el archivo src/config/firebaseconfig.ts.
 
-```bash
-ng build
-```
+Inicia el servidor de desarrollo:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+ionic serve
+Uso
+Ingrese un número en el campo proporcionado.
+Presione el botón "Buscar Múltiplo".
+Revise los resultados y los números guardados en la base de datos en tiempo real.
