@@ -1,6 +1,10 @@
 {
-  "name": "ionic-app",
-  "app_id": "",
+  "name": "proyect",
+  "integrations": {},
   "type": "angular",
-  "integrations": {}
+  "serve": {
+    "options": {
+      "port": 8100
+    }
+  }
 }

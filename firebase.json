@@ -1,11 +1,7 @@
 {
   "hosting": {
-    "public": "dist/Enacment-Proyec",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "public": "dist/proyect-ena/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
