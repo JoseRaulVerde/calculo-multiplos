@@ -58,3 +58,41 @@ export const environment = {
   },
 };
 ```
+
+## Instalación de Dependencias y Ejecución del Proyecto
+
+Sigue estos pasos para instalar las dependencias necesarias y ejecutar el proyecto en tu entorno local:
+
+### 1. Instalación de Dependencias
+Asegúrate de estar en el directorio raíz del proyecto y ejecuta el siguiente comando para instalar todas las dependencias necesarias:
+
+```bash
+npm install
+```
+
+## Compilación y Ejecución del Proyecto
+
+### 2. Compilación del Proyecto
+Para compilar el proyecto en modo desarrollo, ejecuta el siguiente comando:
+
+```bash
+ionic build
+```
+Si necesitas compilar el proyecto para producción, utiliza:
+
+```bash
+
+ionic build --prod
+```
+3. Ejecución del Proyecto en un Servidor Local
+Para correr el proyecto en un servidor local, utiliza:
+
+```bash
+
+ionic serve
+```
+Esto abrirá la aplicación en tu navegador predeterminado en la URL http://localhost:8100. Si no se abre automáticamente, puedes acceder manualmente desde tu navegador.
+
+Creador del proyecto: 
+``Jose Raul Morales Verde``
+
