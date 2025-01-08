@@ -6,15 +6,16 @@ Este proyecto es una aplicación interactiva desarrollada con **Ionic**, **Angul
 
 - **Cálculo de Múltiplos:** Ingrese cualquier número para identificar sus múltiplos de 3, 5 y 7.
 - **Interfaz Dinámica:** Implementación de scroll y diseño responsivo para dispositivos móviles.
-- **Visualización de Resultados:** Muestra los números procesados con colores diferenciados según sus múltiplos.
-  - Verde para múltiplos de 3.
-  - Azul para múltiplos de 5.
-  - Rojo para múltiplos de 7.
-  - Negro si no tiene múltiplos.
+- **Visualización de Resultados:**
+  - Muestra los números procesados con colores diferenciados según sus múltiplos:
+    - **Verde:** Múltiplos de 3.
+    - **Azul:** Múltiplos de 5.
+    - **Rojo:** Múltiplos de 7.
+    - **Negro:** Si no tiene múltiplos.
 - **Firebase Realtime Database:**
   - Guarda los números y colores asociados en la base de datos en tiempo real.
   - Visualiza los números guardados con el historial en orden inverso (lo más reciente primero).
-- **Skeleton Loader:** Visualiza un cargador animado mientras se obtienen los datos de Firebase.
+- **Skeleton Loader:** Cargador animado mientras se obtienen los datos de Firebase.
 - **Diseño Responsivo:** Optimizado para dispositivos móviles y escritorio.
 
 ## Tecnologías Utilizadas
@@ -25,29 +26,35 @@ Este proyecto es una aplicación interactiva desarrollada con **Ionic**, **Angul
 - **TypeScript:** Para una escritura tipada del código.
 - **HTML y CSS:** Para el diseño y maquetación de la aplicación.
 
-## Capturas de Pantalla
-
 ## Instalación
 
 Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 
-1. Clona el repositorio:
+1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.g
+   git clone https://github.com/JoseRaulVerde/calculo-multiplos.git
+   cd calculo-multiplos
+   ```
 
-cd tu-repositorio
-Instala las dependencias:
+## Configura Firebase:
 
-npm install
-Configura Firebase:
+1. **Crea un proyecto en Firebase Console.**
+2. **Agrega las credenciales en el archivo** `src/environments/environment.ts`.
+3. **Usa el archivo de ejemplo proporcionado:** `src/environments/environment.example.ts`.
 
-Crea un proyecto en Firebase.
-Configura las credenciales en el archivo src/config/firebaseconfig.ts.
+### Ejemplo:
 
-Inicia el servidor de desarrollo:
-
-ionic serve
-Uso
-Ingrese un número en el campo proporcionado.
-Presione el botón "Buscar Múltiplo".
-Revise los resultados y los números guardados en la base de datos en tiempo real.
+```typescript
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "TU_API_KEY",
+    authDomain: "TU_AUTH_DOMAIN",
+    databaseURL: "TU_DATABASE_URL",
+    projectId: "TU_PROJECT_ID",
+    storageBucket: "TU_STORAGE_BUCKET",
+    messagingSenderId: "TU_MESSAGING_SENDER_ID",
+    appId: "TU_APP_ID",
+  },
+};
+```
